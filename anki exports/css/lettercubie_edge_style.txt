@@ -1,0 +1,27 @@
+.card {
+    font-family: arial;
+    font-size: 1.33rem;
+    text-align: center;
+    color: black;
+    background-color: white;
+}
+
+p{
+		margin:0;
+		padding:0;
+}
+
+
+.older.hidden{
+		display:none;
+}
+
+.position{
+		margin:1rem;
+		color:gray; 
+		font-size:0.9rem;
+}
+
+.question{
+		font-size:1.2rem;
+}

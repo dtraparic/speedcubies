@@ -1,0 +1,52 @@
+#separator:tab
+#html:true
+#notetype column:1
+#tags column:9
+reco edge notetype	UR	B	FFFFFF	00D800	FFFFFF	EE0000  		
+reco edge notetype	RU	M	FFFFFF	00D800	EE0000	FFFFFF  		
+reco edge notetype	UB	A	FFFFFF	00D800	FFFFFF	0000F2  		
+reco edge notetype	BU	Q	FFFFFF	00D800	0000F2	FFFFFF  		
+reco edge notetype	UL	D	FFFFFF	00D800	FFFFFF	FFA100  		
+reco edge notetype	LU	E	FFFFFF	00D800	FFA100	FFFFFF  		
+reco edge notetype	UF	C	FFFFFF	00D800	FFFFFF	00D800  		
+reco edge notetype	FU	I	FFFFFF	00D800	00D800	FFFFFF 		
+reco edge notetype	RD	0	FFFFFF	00D800	EE0000	FEFE00		
+reco edge notetype	DR	V	FFFFFF	00D800	FEFE00	EE0000		
+reco edge notetype	DB	W	FFFFFF	00D800	FEFE00	0000F2  		
+reco edge notetype	BD	S	FFFFFF	00D800	0000F2	FEFE00  		
+reco edge notetype	DF	U	FFFFFF	00D800	FEFE00	00D800  		
+reco edge notetype	FD	K	FFFFFF	00D800	00D800	FEFE00  		
+reco edge notetype	DL	X	FFFFFF	00D800	FEFE00	FFA100  		
+reco edge notetype	LD	G	FFFFFF	00D800	FFA100	FEFE00  		
+reco edge notetype	RB	N	FFFFFF	00D800	EE0000	0000F2  		
+reco edge notetype	BR	T	FFFFFF	00D800	0000F2	EE0000  		
+reco edge notetype	RF	P	FFFFFF	00D800	EE0000	00D800  		
+reco edge notetype	FR	J	FFFFFF	00D800	00D800	EE0000  		
+reco edge notetype	LB	H	FFFFFF	00D800	FFA100	0000F2  		
+reco edge notetype	BL	R	FFFFFF	00D800	0000F2	FFA100  		
+reco edge notetype	LF	F	FFFFFF	00D800	FFA100	00D800  		
+reco edge notetype	FL	L	FFFFFF	00D800	00D800	FFA100		
+reco corner notetype	URB	B	FFFFFF	00D800	FFFFFF	EE0000	0000F2  	
+reco corner notetype	RBU	N	FFFFFF	00D800	EE0000	0000F2	FFFFFF  	
+reco corner notetype	BUR	Q	FFFFFF	00D800	0000F2	FFFFFF	EE0000  	
+reco corner notetype	UBL	A	FFFFFF	00D800	FFFFFF	0000F2	FFA100  	
+reco corner notetype	BLU	R	FFFFFF	00D800	0000F2	FFA100	FFFFFF  	
+reco corner notetype	LUB	E	FFFFFF	00D800	FFA100	FFFFFF	0000F2  	
+reco corner notetype	ULF	D	FFFFFF	00D800	FFFFFF	FFA100	00D800  	
+reco corner notetype	LFU	F	FFFFFF	00D800	FFA100	00D800	FFFFFF  	
+reco corner notetype	FUL	I	FFFFFF	00D800	00D800	FFFFFF	FFA100  	
+reco corner notetype	UFR	C	FFFFFF	00D800	FFFFFF	00D800	EE0000  	
+reco corner notetype	FRU	J	FFFFFF	00D800	00D800	EE0000	FFFFFF  	
+reco corner notetype	RUF	M	FFFFFF	00D800	EE0000	FFFFFF	00D800  	
+reco corner notetype	DRF	V	FFFFFF	00D800	FEFE00	EE0000	00D800  	
+reco corner notetype	RFD	P	FFFFFF	00D800	EE0000	00D800	FEFE00  	
+reco corner notetype	FDR	K	FFFFFF	00D800	00D800	FEFE00	EE0000  	
+reco corner notetype	DFL	U	FFFFFF	00D800	FEFE00	00D800	FFA100  	
+reco corner notetype	FLD	L	FFFFFF	00D800	00D800	FFA100	FEFE00  	
+reco corner notetype	LDF	G	FFFFFF	00D800	FFA100	FEFE00	00D800  	
+reco corner notetype	DLB	X	FFFFFF	00D800	FEFE00	FFA100	0000F2  	
+reco corner notetype	LBD	H	FFFFFF	00D800	FFA100	0000F2	FEFE00  	
+reco corner notetype	BDL	S	FFFFFF	00D800	0000F2	FEFE00	FFA100  	
+reco corner notetype	DBR	W	FFFFFF	00D800	FEFE00	0000F2	EE0000  	
+reco corner notetype	BRD	T	FFFFFF	00D800	0000F2	EE0000	FEFE00  	
+reco corner notetype	RDB	O	FFFFFF	00D800	EE0000	FEFE00	0000F2	

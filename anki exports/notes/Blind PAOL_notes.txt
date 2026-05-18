@@ -1,0 +1,100 @@
+#separator:tab
+#html:true
+#notetype column:1
+#tags column:4
+Basique (saisissez la réponse)	A Personnage<br>	Astérix/Aladdin	
+Basique (saisissez la réponse)	B Personnage	Barbie	
+Basique (saisissez la réponse)	C Personnage	Clochette	
+Basique (saisissez la réponse)	D Personnage	Donald	
+Basique (saisissez la réponse)	E Personnage<br>	Elsa	
+Basique (saisissez la réponse)	F Personnage<br>	<div>Flash flora piranha</div>	
+Basique (saisissez la réponse)	G Personnage<br>	Gargamel	
+Basique (saisissez la réponse)	H Personnage<br>	Shrek	
+Basique (saisissez la réponse)	I Personnage	Ironman	
+Basique (saisissez la réponse)	J Personnage	Jiraya	
+Basique (saisissez la réponse)	K Personnage	Kirby	
+Basique (saisissez la réponse)	L Personnage	Luigi	
+Basique (saisissez la réponse)	M Personnage	Mickey	
+Basique (saisissez la réponse)	N Personnage	Naruto	
+Basique (saisissez la réponse)	O Personnage	Obélix	
+Basique (saisissez la réponse)	P Personnage	Pikachu	
+Basique (saisissez la réponse)	Q Personnage	Qulbutoké	
+Basique (saisissez la réponse)	R Personnage	Raiponce	
+Basique (saisissez la réponse)	S Personnage	Sacha	
+Basique (saisissez la réponse)	T Personnage	Toad	
+Basique (saisissez la réponse)	U Personnage	Ulysse	
+Basique (saisissez la réponse)	V Personnage	Vaiana	
+Basique (saisissez la réponse)	W Personnage	Wonka	
+Basique (saisissez la réponse)	X Personnage	Professeur Xavier<br>	
+Basique (saisissez la réponse)	A Action	Avaler	
+Basique (saisissez la réponse)	 B Action	Brosser/Baillonner	
+Basique (saisissez la réponse)	C Action	Caliner (Coudre)	
+Basique (saisissez la réponse)	D Action	Dormir/Danser	
+Basique (saisissez la réponse)	E Action	Esquive	
+Basique (saisissez la réponse)	F Action	Fêter	
+Basique (saisissez la réponse)	G Action	Gargariser/Guetter	
+Basique (saisissez la réponse)	H Action	sHampouiner<br>	
+Basique (saisissez la réponse)	I Action	Interviewer	
+Basique (saisissez la réponse)	J Action	Jongler	
+Basique (saisissez la réponse)	K Action	(faire du) Karaté<br>	
+Basique (saisissez la réponse)	L Action	Ligoter	
+Basique (saisissez la réponse)	M Action	Mourir	
+Basique (saisissez la réponse)	N Action	Naître (mettre au monde)<br>	
+Basique (saisissez la réponse)	O Action	Oblitérer	
+Basique (saisissez la réponse)	P Action	Péter	
+Basique (saisissez la réponse)	Q Action	(Se) cuiter<br>	
+Basique (saisissez la réponse)	R Action	Rire	
+Basique (saisissez la réponse)	S Action	Sèche (Sauter/Sucer)	
+Basique (saisissez la réponse)	T Action	Téléphoner	
+Basique (saisissez la réponse)	U Action	Uriner	
+Basique (saisissez la réponse)	V Action	Vomir/Vacciner	
+Basique (saisissez la réponse)	W Action	(Faire du) Waterpolo<br>	
+Basique (saisissez la réponse)	X Action	Exorciser	
+Basique (saisissez la réponse)	A Instrument	Accordéon	
+Basique (saisissez la réponse)	B&nbsp;Instrument	Basse	
+Basique (saisissez la réponse)	C&nbsp;Instrument	Cajon	
+Basique (saisissez la réponse)	D&nbsp;Instrument	Diapason	
+Basique (saisissez la réponse)	E&nbsp;Instrument	Eoliphone	
+Basique (saisissez la réponse)	F&nbsp;Instrument	Flute	
+Basique (saisissez la réponse)	G&nbsp;Instrument	Guimbarde 	
+Basique (saisissez la réponse)	H&nbsp;Instrument	Charleston 	
+Basique (saisissez la réponse)	J&nbsp;Instrument	Jug (bière)	
+Basique (saisissez la réponse)	L&nbsp;Instrument	Lyre	leech
+Basique (saisissez la réponse)	M&nbsp;Instrument	Marimba	
+Basique (saisissez la réponse)	N&nbsp;Instrument	Nail Violon	
+Basique (saisissez la réponse)	P&nbsp;Instrument	Piano	
+Basique (saisissez la réponse)	R&nbsp;Instrument	Rondador ? Roue à carillons ?	
+Basique (saisissez la réponse)	S&nbsp;Instrument	Saxophone/scie	
+Basique (saisissez la réponse)	T&nbsp;Instrument	Triangle	leech
+Basique (saisissez la réponse)	V&nbsp;Instrument	Violon	
+Basique (saisissez la réponse)	W&nbsp;Instrument	Waterphone	
+Basique (saisissez la réponse)	X&nbsp;Instrument	Xylophone 	
+Basique (saisissez la réponse)	I&nbsp;Instrument	Igil	
+Basique (saisissez la réponse)	K&nbsp;Instrument	Kazoo	
+Basique (saisissez la réponse)	O Instrument	Omnichords	
+Basique (saisissez la réponse)	Q&nbsp;Instrument	Quijada d'âne	
+Basique (saisissez la réponse)	U&nbsp;Instrument	Ukulélé	
+Basique (saisissez la réponse)	A Animal	Abeille	
+Basique (saisissez la réponse)	B Animal	Baleine	
+Basique (saisissez la réponse)	C Animal	Coq	leech
+Basique (saisissez la réponse)	D Animal	Dauphin	
+Basique (saisissez la réponse)	E Animal	Écureuil/Éléphant 	
+Basique (saisissez la réponse)	F Animal	Faon	
+Basique (saisissez la réponse)	G Animal	Gnou	
+Basique (saisissez la réponse)	H Animal	cHameau	
+Basique (saisissez la réponse)	I Animal	Iguane	
+Basique (saisissez la réponse)	J Animal	Jaguar (Diego age de glace)	
+Basique (saisissez la réponse)	K Animal	Koala	
+Basique (saisissez la réponse)	L Animal	Lapin/Lion	
+Basique (saisissez la réponse)	M Animal	Mouton	
+Basique (saisissez la réponse)	N Animal	Narval	
+Basique (saisissez la réponse)	O Animal	Ornitorhynque	
+Basique (saisissez la réponse)	P Animal	Panda	
+Basique (saisissez la réponse)	Q Animal	Quokka	
+Basique (saisissez la réponse)	R Animal	Racoon 	
+Basique (saisissez la réponse)	S Animal	Sauterelle	leech
+Basique (saisissez la réponse)	T Animal	Tortue	
+Basique (saisissez la réponse)	U Animal	Ursadon	
+Basique (saisissez la réponse)	V Animal	Vipère	
+Basique (saisissez la réponse)	W Animal	Wabbit	
+Basique (saisissez la réponse)	X Animal	Xénope	
