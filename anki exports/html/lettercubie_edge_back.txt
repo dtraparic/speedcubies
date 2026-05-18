@@ -1,7 +1,0 @@
-{{FrontSide}}
-
-<hr id=answer>
-
-<p>{{Letter}}</p>
-
-<p class="position">{{Position}}</p>

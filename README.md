@@ -1,2 +1,2 @@
-# speedblindletter.io
+# speedcubies
 Speedrunning the detection of blind letter

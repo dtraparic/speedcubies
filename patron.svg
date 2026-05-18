@@ -1,0 +1,284 @@
+
+<svg width="100%" viewBox="0 0 680 520" role="img" style="" xmlns="http://www.w3.org/2000/svg">
+  <title style="fill:rgb(0, 0, 0);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">Patron Rubik's cube — schéma mémo lettercubie</title>
+  <desc style="fill:rgb(0, 0, 0);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">Patron déplié du cube avec les lettres mémo BLD sur chaque sticker. Blanc en haut, vert en face, jaune en bas, rouge à droite, bleu derrière (rangée du haut), orange à gauche.</desc>
+
+  <!--
+    DISPOSITION DU PATRON (croix classique) :
+    
+           [U blanc]
+    [L org] [F vert] [R rouge] [B bleu]
+           [D jaune]
+
+    Taille d'une case : 36×36px   Gap : 2px
+    Taille d'une face : 3×36 + 2×2 = 112px
+    
+    Origines (coin haut-gauche de chaque face) :
+      U  : x=168, y=8
+      L  : x=56,  y=120
+      F  : x=168, y=120
+      R  : x=280, y=120
+      B  : x=392, y=120
+      D  : x=168, y=232
+  -->
+
+  <!-- ── PALETTE ── -->
+  <!-- Blanc=#FFFFFF, Vert=#00D800, Jaune=#FEFE00, Rouge=#EE0000, Bleu=#0000F2, Orange=#FFA100 -->
+
+  
+
+  <!--
+    HELPER : pour chaque face, les 9 cases sont numérotées :
+      0  1  2
+      3  [C] 4
+      5  6  7
+    Centre [C] = pas de lettre mémo (pièce centrale fixe)
+    
+    Positions des stickers par face (lettre = position BLD) :
+    
+    Face U (blanc) — color1 commence par U :
+      coin UBL=A  arête UB=A  coin URB=B
+      arête UL=D  [centre]   arête UR=B
+      coin ULF=D  arête UF=C  coin UFR=C
+      
+    Face F (vert) — color1 commence par F :
+      coin FUL=I  arête FU=I  coin FRU=J
+      arête FL=L  [centre]   arête FR=J
+      coin FLD=L  arête FD=K  coin FDR=K
+      
+    Face R (rouge) — color1 commence par R :
+      coin RUF=M  arête RF=P  coin (RBU → color2 de BUR... non)
+      Attention : on cherche les cartes où color1 est sur face R
+      RUF=M, RU=M, RBU=N, RB=N, RFD=P, RF=P, RDB=O, RD=O
+      
+      coin URB → sticker R = RBU=N   arête UR → sticker R = RU=M   coin RUF=M
+      arête RB=N  [centre]  arête RF=P
+      coin RDB=O  arête RD=O  coin RFD=P
+      
+    Face B (bleu) — color1 commence par B :
+      BUR=Q, BU=Q, BLU=R, BL=R, BDL=S, BD=S, BRD=T, BR=T
+      
+      coin BUR=Q   arête BU=Q  coin (de face B, coin haut-gauche depuis B)
+      Orientation de B dans le patron (vue de face B, donc miroir) :
+      En patron classique, B est affiché en vue extérieure → orienté à l'envers
+      
+      Haut-gauche de B (dans le patron) = coin URB vu de B = BUR=Q
+      Haut-centre = arête UB vu de B = BU=Q
+      Haut-droite = coin UBL vu de B = BLU=R
+      Milieu-gauche = arête RB vu de B = BR=T
+      Milieu-droite = arête BL = BL=R... 
+      
+      → On affiche B orienté : URB en haut-gauche, UBL en haut-droite
+      coin hg: BUR=Q  arête-h: BU=Q  coin hd: BLU=R
+      arête-g: BR=T   [centre]        arête-d: BL=R
+      coin bg: BRD=T  arête-b: BD=S  coin bd: BDL=S
+      
+    Face L (orange) — color1 commence par L :
+      LUB=E, LU=E, LFU=F, LF=F, LDF=G, LD=G, LBD=H, LB=H
+      
+      Orientation L dans patron (à gauche de F) :
+      coin hd: LUB=E   arête-h: LU=E   coin hg: LFU=F
+      arête-d: LB=H    [centre]         arête-g: LF=F
+      coin bd: LBD=H   arête-b: LD=G   coin bg: LDF=G
+      
+      → affiché miroir horizontal pour que le bord droit touche F
+      coin hg: LFU=F  arête-h: LU=E  coin hd: LUB=E
+      arête-g: LF=F   [centre]        arête-d: LB=H
+      coin bg: LDF=G  arête-b: LD=G  coin bd: LBD=H
+      
+    Face D (jaune) — color1 commence par D :
+      DFL=U, DF=U, DRF=V, DR=V, DBR=W, DB=W, DLB=X, DL=X
+      
+      Orientation D (sous F) :
+      coin hg: DFL=U  arête-h: DF=U  coin hd: DRF=V
+      arête-g: DL=X   [centre]        arête-d: DR=V
+      coin bg: DLB=X  arête-b: DB=W  coin bd: DBR=W
+  -->
+
+  <!-- ═══════════════ FACE U — BLANC ═══════════════ -->
+  <!-- ox=168, oy=8 -->
+  <g style="fill:rgb(0, 0, 0);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">
+    <!-- case 0,0 coin UBL=A -->
+    <rect x="168" y="8" width="36" height="36" fill="#FFFFFF" stroke="#999" stroke-width="1" style="fill:rgb(255, 255, 255);stroke:rgb(153, 153, 153);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <text x="186" y="26" style="fill:rgb(17, 17, 17);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:monospace;font-size:14px;font-weight:700;text-anchor:middle;dominant-baseline:central">A</text>
+    <!-- case 1,0 arête UB=A -->
+    <rect x="206" y="8" width="36" height="36" fill="#FFFFFF" stroke="#999" stroke-width="1" style="fill:rgb(255, 255, 255);stroke:rgb(153, 153, 153);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <text x="224" y="26" style="fill:rgb(17, 17, 17);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:monospace;font-size:14px;font-weight:700;text-anchor:middle;dominant-baseline:central">A</text>
+    <!-- case 2,0 coin URB=B -->
+    <rect x="244" y="8" width="36" height="36" fill="#FFFFFF" stroke="#999" stroke-width="1" style="fill:rgb(255, 255, 255);stroke:rgb(153, 153, 153);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <text x="262" y="26" style="fill:rgb(17, 17, 17);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:monospace;font-size:14px;font-weight:700;text-anchor:middle;dominant-baseline:central">B</text>
+    <!-- case 0,1 arête UL=D -->
+    <rect x="168" y="46" width="36" height="36" fill="#FFFFFF" stroke="#999" stroke-width="1" style="fill:rgb(255, 255, 255);stroke:rgb(153, 153, 153);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <text x="186" y="64" style="fill:rgb(17, 17, 17);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:monospace;font-size:14px;font-weight:700;text-anchor:middle;dominant-baseline:central">D</text>
+    <!-- case 1,1 centre -->
+    <rect x="206" y="46" width="36" height="36" fill="#FFFFFF" stroke="#999" stroke-width="1" style="fill:rgb(255, 255, 255);stroke:rgb(153, 153, 153);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <text x="224" y="66" style="fill:rgb(136, 136, 136);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:monospace;font-size:9px;font-weight:400;text-anchor:middle;dominant-baseline:auto">U</text>
+    <!-- case 2,1 arête UR=B -->
+    <rect x="244" y="46" width="36" height="36" fill="#FFFFFF" stroke="#999" stroke-width="1" style="fill:rgb(255, 255, 255);stroke:rgb(153, 153, 153);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <text x="262" y="64" style="fill:rgb(17, 17, 17);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:monospace;font-size:14px;font-weight:700;text-anchor:middle;dominant-baseline:central">B</text>
+    <!-- case 0,2 coin ULF=D -->
+    <rect x="168" y="84" width="36" height="36" fill="#FFFFFF" stroke="#999" stroke-width="1" style="fill:rgb(255, 255, 255);stroke:rgb(153, 153, 153);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <text x="186" y="102" style="fill:rgb(17, 17, 17);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:monospace;font-size:14px;font-weight:700;text-anchor:middle;dominant-baseline:central">D</text>
+    <!-- case 1,2 arête UF=C -->
+    <rect x="206" y="84" width="36" height="36" fill="#FFFFFF" stroke="#999" stroke-width="1" style="fill:rgb(255, 255, 255);stroke:rgb(153, 153, 153);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <text x="224" y="102" style="fill:rgb(17, 17, 17);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:monospace;font-size:14px;font-weight:700;text-anchor:middle;dominant-baseline:central">C</text>
+    <!-- case 2,2 coin UFR=C -->
+    <rect x="244" y="84" width="36" height="36" fill="#FFFFFF" stroke="#999" stroke-width="1" style="fill:rgb(255, 255, 255);stroke:rgb(153, 153, 153);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <text x="262" y="102" style="fill:rgb(17, 17, 17);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:monospace;font-size:14px;font-weight:700;text-anchor:middle;dominant-baseline:central">C</text>
+  </g>
+
+  <!-- ═══════════════ FACE L — ORANGE ═══════════════ -->
+  <!-- ox=56, oy=120 -->
+  <g style="fill:rgb(0, 0, 0);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">
+    <rect x="56" y="120" width="36" height="36" fill="#FFA100" stroke="#999" stroke-width="1" style="fill:rgb(255, 161, 0);stroke:rgb(153, 153, 153);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <text x="74" y="138" style="fill:rgb(17, 17, 17);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:monospace;font-size:14px;font-weight:700;text-anchor:middle;dominant-baseline:central">F</text>
+    <rect x="94" y="120" width="36" height="36" fill="#FFA100" stroke="#999" stroke-width="1" style="fill:rgb(255, 161, 0);stroke:rgb(153, 153, 153);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <text x="112" y="138" style="fill:rgb(17, 17, 17);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:monospace;font-size:14px;font-weight:700;text-anchor:middle;dominant-baseline:central">E</text>
+    <rect x="132" y="120" width="36" height="36" fill="#FFA100" stroke="#999" stroke-width="1" style="fill:rgb(255, 161, 0);stroke:rgb(153, 153, 153);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <text x="150" y="138" style="fill:rgb(17, 17, 17);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:monospace;font-size:14px;font-weight:700;text-anchor:middle;dominant-baseline:central">E</text>
+
+    <rect x="56" y="158" width="36" height="36" fill="#FFA100" stroke="#999" stroke-width="1" style="fill:rgb(255, 161, 0);stroke:rgb(153, 153, 153);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <text x="74" y="176" style="fill:rgb(17, 17, 17);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:monospace;font-size:14px;font-weight:700;text-anchor:middle;dominant-baseline:central">F</text>
+    <rect x="94" y="158" width="36" height="36" fill="#FFA100" stroke="#999" stroke-width="1" style="fill:rgb(255, 161, 0);stroke:rgb(153, 153, 153);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <text x="112" y="178" style="fill:rgb(136, 136, 136);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:monospace;font-size:9px;font-weight:400;text-anchor:middle;dominant-baseline:auto">L</text>
+    <rect x="132" y="158" width="36" height="36" fill="#FFA100" stroke="#999" stroke-width="1" style="fill:rgb(255, 161, 0);stroke:rgb(153, 153, 153);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <text x="150" y="176" style="fill:rgb(17, 17, 17);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:monospace;font-size:14px;font-weight:700;text-anchor:middle;dominant-baseline:central">H</text>
+
+    <rect x="56" y="196" width="36" height="36" fill="#FFA100" stroke="#999" stroke-width="1" style="fill:rgb(255, 161, 0);stroke:rgb(153, 153, 153);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <text x="74" y="214" style="fill:rgb(17, 17, 17);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:monospace;font-size:14px;font-weight:700;text-anchor:middle;dominant-baseline:central">G</text>
+    <rect x="94" y="196" width="36" height="36" fill="#FFA100" stroke="#999" stroke-width="1" style="fill:rgb(255, 161, 0);stroke:rgb(153, 153, 153);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <text x="112" y="214" style="fill:rgb(17, 17, 17);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:monospace;font-size:14px;font-weight:700;text-anchor:middle;dominant-baseline:central">G</text>
+    <rect x="132" y="196" width="36" height="36" fill="#FFA100" stroke="#999" stroke-width="1" style="fill:rgb(255, 161, 0);stroke:rgb(153, 153, 153);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <text x="150" y="214" style="fill:rgb(17, 17, 17);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:monospace;font-size:14px;font-weight:700;text-anchor:middle;dominant-baseline:central">H</text>
+  </g>
+
+  <!-- ═══════════════ FACE F — VERT ═══════════════ -->
+  <!-- ox=168, oy=120 -->
+  <g style="fill:rgb(0, 0, 0);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">
+    <rect x="168" y="120" width="36" height="36" fill="#00D800" stroke="#999" stroke-width="1" style="fill:rgb(0, 216, 0);stroke:rgb(153, 153, 153);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <text x="186" y="138" style="fill:rgb(17, 17, 17);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:monospace;font-size:14px;font-weight:700;text-anchor:middle;dominant-baseline:central">I</text>
+    <rect x="206" y="120" width="36" height="36" fill="#00D800" stroke="#999" stroke-width="1" style="fill:rgb(0, 216, 0);stroke:rgb(153, 153, 153);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <text x="224" y="138" style="fill:rgb(17, 17, 17);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:monospace;font-size:14px;font-weight:700;text-anchor:middle;dominant-baseline:central">I</text>
+    <rect x="244" y="120" width="36" height="36" fill="#00D800" stroke="#999" stroke-width="1" style="fill:rgb(0, 216, 0);stroke:rgb(153, 153, 153);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <text x="262" y="138" style="fill:rgb(17, 17, 17);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:monospace;font-size:14px;font-weight:700;text-anchor:middle;dominant-baseline:central">J</text>
+
+    <rect x="168" y="158" width="36" height="36" fill="#00D800" stroke="#999" stroke-width="1" style="fill:rgb(0, 216, 0);stroke:rgb(153, 153, 153);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <text x="186" y="176" style="fill:rgb(17, 17, 17);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:monospace;font-size:14px;font-weight:700;text-anchor:middle;dominant-baseline:central">L</text>
+    <rect x="206" y="158" width="36" height="36" fill="#00D800" stroke="#999" stroke-width="1" style="fill:rgb(0, 216, 0);stroke:rgb(153, 153, 153);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <text x="224" y="178" style="fill:rgb(136, 136, 136);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:monospace;font-size:9px;font-weight:400;text-anchor:middle;dominant-baseline:auto">F</text>
+    <rect x="244" y="158" width="36" height="36" fill="#00D800" stroke="#999" stroke-width="1" style="fill:rgb(0, 216, 0);stroke:rgb(153, 153, 153);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <text x="262" y="176" style="fill:rgb(17, 17, 17);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:monospace;font-size:14px;font-weight:700;text-anchor:middle;dominant-baseline:central">J</text>
+
+    <rect x="168" y="196" width="36" height="36" fill="#00D800" stroke="#999" stroke-width="1" style="fill:rgb(0, 216, 0);stroke:rgb(153, 153, 153);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <text x="186" y="214" style="fill:rgb(17, 17, 17);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:monospace;font-size:14px;font-weight:700;text-anchor:middle;dominant-baseline:central">L</text>
+    <rect x="206" y="196" width="36" height="36" fill="#00D800" stroke="#999" stroke-width="1" style="fill:rgb(0, 216, 0);stroke:rgb(153, 153, 153);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <text x="224" y="214" style="fill:rgb(17, 17, 17);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:monospace;font-size:14px;font-weight:700;text-anchor:middle;dominant-baseline:central">K</text>
+    <rect x="244" y="196" width="36" height="36" fill="#00D800" stroke="#999" stroke-width="1" style="fill:rgb(0, 216, 0);stroke:rgb(153, 153, 153);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <text x="262" y="214" style="fill:rgb(17, 17, 17);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:monospace;font-size:14px;font-weight:700;text-anchor:middle;dominant-baseline:central">K</text>
+  </g>
+
+  <!-- ═══════════════ FACE R — ROUGE ═══════════════ -->
+  <!-- ox=280, oy=120 -->
+  <g style="fill:rgb(0, 0, 0);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">
+    <rect x="280" y="120" width="36" height="36" fill="#EE0000" stroke="#999" stroke-width="1" style="fill:rgb(238, 0, 0);stroke:rgb(153, 153, 153);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <text x="298" y="138" style="fill:rgb(255, 255, 255);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:monospace;font-size:14px;font-weight:700;text-anchor:middle;dominant-baseline:central">M</text>
+    <rect x="318" y="120" width="36" height="36" fill="#EE0000" stroke="#999" stroke-width="1" style="fill:rgb(238, 0, 0);stroke:rgb(153, 153, 153);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <text x="336" y="138" style="fill:rgb(255, 255, 255);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:monospace;font-size:14px;font-weight:700;text-anchor:middle;dominant-baseline:central">M</text>
+    <rect x="356" y="120" width="36" height="36" fill="#EE0000" stroke="#999" stroke-width="1" style="fill:rgb(238, 0, 0);stroke:rgb(153, 153, 153);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <text x="374" y="138" style="fill:rgb(255, 255, 255);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:monospace;font-size:14px;font-weight:700;text-anchor:middle;dominant-baseline:central">N</text>
+
+    <rect x="280" y="158" width="36" height="36" fill="#EE0000" stroke="#999" stroke-width="1" style="fill:rgb(238, 0, 0);stroke:rgb(153, 153, 153);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <text x="298" y="176" style="fill:rgb(255, 255, 255);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:monospace;font-size:14px;font-weight:700;text-anchor:middle;dominant-baseline:central">P</text>
+    <rect x="318" y="158" width="36" height="36" fill="#EE0000" stroke="#999" stroke-width="1" style="fill:rgb(238, 0, 0);stroke:rgb(153, 153, 153);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <text x="336" y="178" style="fill:rgb(136, 136, 136);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:monospace;font-size:9px;font-weight:400;text-anchor:middle;dominant-baseline:auto">R</text>
+    <rect x="356" y="158" width="36" height="36" fill="#EE0000" stroke="#999" stroke-width="1" style="fill:rgb(238, 0, 0);stroke:rgb(153, 153, 153);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <text x="374" y="176" style="fill:rgb(255, 255, 255);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:monospace;font-size:14px;font-weight:700;text-anchor:middle;dominant-baseline:central">N</text>
+
+    <rect x="280" y="196" width="36" height="36" fill="#EE0000" stroke="#999" stroke-width="1" style="fill:rgb(238, 0, 0);stroke:rgb(153, 153, 153);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <text x="298" y="214" style="fill:rgb(255, 255, 255);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:monospace;font-size:14px;font-weight:700;text-anchor:middle;dominant-baseline:central">P</text>
+    <rect x="318" y="196" width="36" height="36" fill="#EE0000" stroke="#999" stroke-width="1" style="fill:rgb(238, 0, 0);stroke:rgb(153, 153, 153);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <text x="336" y="214" style="fill:rgb(255, 255, 255);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:monospace;font-size:14px;font-weight:700;text-anchor:middle;dominant-baseline:central">O</text>
+    <rect x="356" y="196" width="36" height="36" fill="#EE0000" stroke="#999" stroke-width="1" style="fill:rgb(238, 0, 0);stroke:rgb(153, 153, 153);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <text x="374" y="214" style="fill:rgb(255, 255, 255);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:monospace;font-size:14px;font-weight:700;text-anchor:middle;dominant-baseline:central">O</text>
+  </g>
+
+  <!-- ═══════════════ FACE B — BLEU ═══════════════ -->
+  <!-- ox=392, oy=120 — orienté miroir (vue extérieure depuis derrière) -->
+  <g style="fill:rgb(0, 0, 0);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">
+    <rect x="392" y="120" width="36" height="36" fill="#0000F2" stroke="#999" stroke-width="1" style="fill:rgb(0, 0, 242);stroke:rgb(153, 153, 153);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <text x="410" y="138" style="fill:rgb(255, 255, 255);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:monospace;font-size:14px;font-weight:700;text-anchor:middle;dominant-baseline:central">Q</text>
+    <rect x="430" y="120" width="36" height="36" fill="#0000F2" stroke="#999" stroke-width="1" style="fill:rgb(0, 0, 242);stroke:rgb(153, 153, 153);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <text x="448" y="138" style="fill:rgb(255, 255, 255);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:monospace;font-size:14px;font-weight:700;text-anchor:middle;dominant-baseline:central">Q</text>
+    <rect x="468" y="120" width="36" height="36" fill="#0000F2" stroke="#999" stroke-width="1" style="fill:rgb(0, 0, 242);stroke:rgb(153, 153, 153);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <text x="486" y="138" style="fill:rgb(255, 255, 255);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:monospace;font-size:14px;font-weight:700;text-anchor:middle;dominant-baseline:central">R</text>
+
+    <rect x="392" y="158" width="36" height="36" fill="#0000F2" stroke="#999" stroke-width="1" style="fill:rgb(0, 0, 242);stroke:rgb(153, 153, 153);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <text x="410" y="176" style="fill:rgb(255, 255, 255);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:monospace;font-size:14px;font-weight:700;text-anchor:middle;dominant-baseline:central">T</text>
+    <rect x="430" y="158" width="36" height="36" fill="#0000F2" stroke="#999" stroke-width="1" style="fill:rgb(0, 0, 242);stroke:rgb(153, 153, 153);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <text x="448" y="178" style="fill:rgb(136, 136, 136);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:monospace;font-size:9px;font-weight:400;text-anchor:middle;dominant-baseline:auto">B</text>
+    <rect x="468" y="158" width="36" height="36" fill="#0000F2" stroke="#999" stroke-width="1" style="fill:rgb(0, 0, 242);stroke:rgb(153, 153, 153);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <text x="486" y="176" style="fill:rgb(255, 255, 255);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:monospace;font-size:14px;font-weight:700;text-anchor:middle;dominant-baseline:central">R</text>
+
+    <rect x="392" y="196" width="36" height="36" fill="#0000F2" stroke="#999" stroke-width="1" style="fill:rgb(0, 0, 242);stroke:rgb(153, 153, 153);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <text x="410" y="214" style="fill:rgb(255, 255, 255);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:monospace;font-size:14px;font-weight:700;text-anchor:middle;dominant-baseline:central">T</text>
+    <rect x="430" y="196" width="36" height="36" fill="#0000F2" stroke="#999" stroke-width="1" style="fill:rgb(0, 0, 242);stroke:rgb(153, 153, 153);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <text x="448" y="214" style="fill:rgb(255, 255, 255);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:monospace;font-size:14px;font-weight:700;text-anchor:middle;dominant-baseline:central">S</text>
+    <rect x="468" y="196" width="36" height="36" fill="#0000F2" stroke="#999" stroke-width="1" style="fill:rgb(0, 0, 242);stroke:rgb(153, 153, 153);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <text x="486" y="214" style="fill:rgb(255, 255, 255);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:monospace;font-size:14px;font-weight:700;text-anchor:middle;dominant-baseline:central">S</text>
+  </g>
+
+  <!-- ═══════════════ FACE D — JAUNE ═══════════════ -->
+  <!-- ox=168, oy=232 -->
+  <g style="fill:rgb(0, 0, 0);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">
+    <rect x="168" y="232" width="36" height="36" fill="#FEFE00" stroke="#999" stroke-width="1" style="fill:rgb(254, 254, 0);stroke:rgb(153, 153, 153);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <text x="186" y="250" style="fill:rgb(17, 17, 17);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:monospace;font-size:14px;font-weight:700;text-anchor:middle;dominant-baseline:central">U</text>
+    <rect x="206" y="232" width="36" height="36" fill="#FEFE00" stroke="#999" stroke-width="1" style="fill:rgb(254, 254, 0);stroke:rgb(153, 153, 153);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <text x="224" y="250" style="fill:rgb(17, 17, 17);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:monospace;font-size:14px;font-weight:700;text-anchor:middle;dominant-baseline:central">U</text>
+    <rect x="244" y="232" width="36" height="36" fill="#FEFE00" stroke="#999" stroke-width="1" style="fill:rgb(254, 254, 0);stroke:rgb(153, 153, 153);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <text x="262" y="250" style="fill:rgb(17, 17, 17);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:monospace;font-size:14px;font-weight:700;text-anchor:middle;dominant-baseline:central">V</text>
+
+    <rect x="168" y="270" width="36" height="36" fill="#FEFE00" stroke="#999" stroke-width="1" style="fill:rgb(254, 254, 0);stroke:rgb(153, 153, 153);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <text x="186" y="288" style="fill:rgb(17, 17, 17);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:monospace;font-size:14px;font-weight:700;text-anchor:middle;dominant-baseline:central">X</text>
+    <rect x="206" y="270" width="36" height="36" fill="#FEFE00" stroke="#999" stroke-width="1" style="fill:rgb(254, 254, 0);stroke:rgb(153, 153, 153);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <text x="224" y="290" style="fill:rgb(136, 136, 136);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:monospace;font-size:9px;font-weight:400;text-anchor:middle;dominant-baseline:auto">D</text>
+    <rect x="244" y="270" width="36" height="36" fill="#FEFE00" stroke="#999" stroke-width="1" style="fill:rgb(254, 254, 0);stroke:rgb(153, 153, 153);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <text x="262" y="288" style="fill:rgb(17, 17, 17);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:monospace;font-size:14px;font-weight:700;text-anchor:middle;dominant-baseline:central">V</text>
+
+    <rect x="168" y="308" width="36" height="36" fill="#FEFE00" stroke="#999" stroke-width="1" style="fill:rgb(254, 254, 0);stroke:rgb(153, 153, 153);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <text x="186" y="326" style="fill:rgb(17, 17, 17);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:monospace;font-size:14px;font-weight:700;text-anchor:middle;dominant-baseline:central">X</text>
+    <rect x="206" y="308" width="36" height="36" fill="#FEFE00" stroke="#999" stroke-width="1" style="fill:rgb(254, 254, 0);stroke:rgb(153, 153, 153);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <text x="224" y="326" style="fill:rgb(17, 17, 17);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:monospace;font-size:14px;font-weight:700;text-anchor:middle;dominant-baseline:central">W</text>
+    <rect x="244" y="308" width="36" height="36" fill="#FEFE00" stroke="#999" stroke-width="1" style="fill:rgb(254, 254, 0);stroke:rgb(153, 153, 153);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <text x="262" y="326" style="fill:rgb(17, 17, 17);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:monospace;font-size:14px;font-weight:700;text-anchor:middle;dominant-baseline:central">W</text>
+  </g>
+
+  <!-- ═══════════════ LÉGENDE ═══════════════ -->
+  <g transform="translate(530, 130)" style="fill:rgb(0, 0, 0);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">
+    <text style="font-family:monospace;font-size:10px;fill:#888;font-weight:bold;fill:rgb(136, 136, 136);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:monospace;font-size:10px;font-weight:700;text-anchor:start;dominant-baseline:auto" x="0" y="0">SCHÉMA</text>
+    <text style="font-family:monospace;font-size:9px;fill:#888;fill:rgb(136, 136, 136);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:monospace;font-size:9px;font-weight:400;text-anchor:start;dominant-baseline:auto" x="0" y="14">coin coin</text>
+    <text style="font-family:monospace;font-size:9px;fill:#888;fill:rgb(136, 136, 136);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:monospace;font-size:9px;font-weight:400;text-anchor:start;dominant-baseline:auto" x="0" y="26">arête</text>
+    <rect x="0" y="35" width="14" height="14" fill="#FFFFFF" stroke="#999" stroke-width="1" style="fill:rgb(255, 255, 255);stroke:rgb(153, 153, 153);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <text style="font-family:monospace;font-size:9px;fill:#888;fill:rgb(136, 136, 136);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:monospace;font-size:9px;font-weight:400;text-anchor:start;dominant-baseline:auto" x="18" y="46">U blanc</text>
+    <rect x="0" y="55" width="14" height="14" fill="#00D800" stroke="#999" stroke-width="1" style="fill:rgb(0, 216, 0);stroke:rgb(153, 153, 153);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <text style="font-family:monospace;font-size:9px;fill:#888;fill:rgb(136, 136, 136);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:monospace;font-size:9px;font-weight:400;text-anchor:start;dominant-baseline:auto" x="18" y="66">F vert</text>
+    <rect x="0" y="75" width="14" height="14" fill="#FEFE00" stroke="#999" stroke-width="1" style="fill:rgb(254, 254, 0);stroke:rgb(153, 153, 153);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <text style="font-family:monospace;font-size:9px;fill:#888;fill:rgb(136, 136, 136);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:monospace;font-size:9px;font-weight:400;text-anchor:start;dominant-baseline:auto" x="18" y="86">D jaune</text>
+    <rect x="0" y="95" width="14" height="14" fill="#EE0000" stroke="#999" stroke-width="1" style="fill:rgb(238, 0, 0);stroke:rgb(153, 153, 153);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <text style="font-family:monospace;font-size:9px;fill:#888;fill:rgb(136, 136, 136);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:monospace;font-size:9px;font-weight:400;text-anchor:start;dominant-baseline:auto" x="18" y="106">R rouge</text>
+    <rect x="0" y="115" width="14" height="14" fill="#0000F2" stroke="#999" stroke-width="1" style="fill:rgb(0, 0, 242);stroke:rgb(153, 153, 153);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <text style="font-family:monospace;font-size:9px;fill:#888;fill:rgb(136, 136, 136);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:monospace;font-size:9px;font-weight:400;text-anchor:start;dominant-baseline:auto" x="18" y="126">B bleu</text>
+    <rect x="0" y="135" width="14" height="14" fill="#FFA100" stroke="#999" stroke-width="1" style="fill:rgb(255, 161, 0);stroke:rgb(153, 153, 153);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <text style="font-family:monospace;font-size:9px;fill:#888;fill:rgb(136, 136, 136);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:monospace;font-size:9px;font-weight:400;text-anchor:start;dominant-baseline:auto" x="18" y="146">L orange</text>
+    <text style="font-family:monospace;font-size:8px;fill:#aaa;fill:rgb(170, 170, 170);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:monospace;font-size:8px;font-weight:400;text-anchor:start;dominant-baseline:auto" x="0" y="168">lettre = sticker</text>
+    <text style="font-family:monospace;font-size:8px;fill:#aaa;fill:rgb(170, 170, 170);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:monospace;font-size:8px;font-weight:400;text-anchor:start;dominant-baseline:auto" x="0" y="180">sur cette face</text>
+  </g>
+
+  <!-- ═══════════════ LABELS DE FACES ═══════════════ -->
+  <text style="font-size:10px;font-weight:bold;fill:#aaa;fill:rgb(170, 170, 170);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:monospace;font-size:10px;font-weight:700;text-anchor:middle;dominant-baseline:auto" x="224" y="5" text-anchor="middle">HAUT (U)</text>
+  <text style="font-size:10px;font-weight:bold;fill:#aaa;fill:rgb(170, 170, 170);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:monospace;font-size:10px;font-weight:700;text-anchor:middle;dominant-baseline:auto" x="112" y="118" text-anchor="middle">GAUCHE (L)</text>
+  <text style="font-size:10px;font-weight:bold;fill:#aaa;fill:rgb(170, 170, 170);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:monospace;font-size:10px;font-weight:700;text-anchor:middle;dominant-baseline:auto" x="224" y="118" text-anchor="middle">FACE (F)</text>
+  <text style="font-size:10px;font-weight:bold;fill:#aaa;fill:rgb(170, 170, 170);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:monospace;font-size:10px;font-weight:700;text-anchor:middle;dominant-baseline:auto" x="336" y="118" text-anchor="middle">DROITE (R)</text>
+  <text style="font-size:10px;font-weight:bold;fill:#aaa;fill:rgb(170, 170, 170);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:monospace;font-size:10px;font-weight:700;text-anchor:middle;dominant-baseline:auto" x="448" y="118" text-anchor="middle">DERRIÈRE (B)</text>
+  <text style="font-size:10px;font-weight:bold;fill:#aaa;fill:rgb(170, 170, 170);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:monospace;font-size:10px;font-weight:700;text-anchor:middle;dominant-baseline:auto" x="224" y="350" text-anchor="middle">BAS (D)</text>
+
+</svg>

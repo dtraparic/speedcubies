@@ -290,7 +290,7 @@ function showCard(idx) {
 
   // Mise à jour HUD
   // Note : en mode requeue, deck.length peut augmenter → la barre recule (comportement voulu)
-  $("progress-text").textContent      = `${idx + 1} / ${deck.length}`;
+  $("progress-text").textContent      = `${idx} / ${deck.length}`;
   $("progress-bar").style.width       = `${(idx / deck.length) * 100}%`;
   $("error-count").textContent        = totalErrors;
 

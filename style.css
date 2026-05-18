@@ -537,3 +537,53 @@ html, body {
 #results-table td:nth-child(1) { color: var(--muted); font-size: 0.7rem; }
 #results-table td:nth-child(2) { font-family: var(--font-disp); font-size: 0.75rem; letter-spacing: 0.1em; }
 #results-table td:nth-child(3) { font-weight: bold; }
+
+/* ===== SCHÉMA MÉMO (section dépliable) ===== */
+
+/* On réutilise .opt-group mais on retire le gap interne par défaut */
+.opt-schema {
+  padding-bottom: 0;
+}
+
+/* La ligne cliquable du summary */
+.opt-summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  list-style: none;          /* cache le triangle natif sur Firefox */
+  padding-bottom: 1rem;
+  user-select: none;
+}
+/* Cache le triangle natif sur Chrome/Safari */
+.opt-summary::-webkit-details-marker { display: none; }
+
+.opt-summary:hover .opt-legend { color: var(--accent); }
+
+/* Flèche custom qui tourne à l'ouverture */
+.opt-summary-arrow {
+  font-size: 0.75rem;
+  color: var(--muted);
+  transition: transform 0.2s ease;
+}
+details[open] .opt-summary-arrow {
+  transform: rotate(180deg);
+}
+
+/* Zone du SVG : scroll horizontal si trop petit, centré */
+.schema-wrap {
+  overflow-x: auto;
+  padding-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+}
+
+/* Le SVG lui-même : taille fixe, pas plus grand que le panneau */
+.schema-wrap svg {
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+  display: block;
+}
