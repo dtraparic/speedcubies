@@ -20,18 +20,49 @@
         <span class="logo-tag">&lt;/LETTERCUBIE&gt;</span>
       </div>
 
-      <!-- OPTIONS -->
       <div class="options-panel">
-        <!-- <details class="opt-group opt-schema">
+
+        <!-- Filtre par face — fermé par défaut -->
+        <details class="opt-group opt-schema">
           <summary class="opt-summary">
-            <span class="opt-legend">SCHÉMA MÉMO</span>
+            <span class="opt-legend">FACES</span>
             <span class="opt-summary-arrow">▾</span>
           </summary>
-          <div class="schema-wrap">
-             COLLE TON SVG ICI 
+          <div class="check-col">
+            <div class="face-row">
+              <label class="face-label-btn">
+                <input type="checkbox" name="opt-face" value="U" checked />
+                <span class="face-box" style="--face-color:#FFFFFF; --face-text:#111;">U</span>
+              </label>
+              <label class="face-label-btn">
+                <input type="checkbox" name="opt-face" value="D" checked />
+                <span class="face-box" style="--face-color:#FEFE00; --face-text:#111;">D</span>
+              </label>
+              <label class="face-label-btn">
+                <input type="checkbox" name="opt-face" value="F" checked />
+                <span class="face-box" style="--face-color:#00D800; --face-text:#111;">F</span>
+              </label>
+              <label class="face-label-btn">
+                <input type="checkbox" name="opt-face" value="B" checked />
+                <span class="face-box" style="--face-color:#0000F2; --face-text:#fff;">B</span>
+              </label>
+              <label class="face-label-btn">
+                <input type="checkbox" name="opt-face" value="R" checked />
+                <span class="face-box" style="--face-color:#EE0000; --face-text:#fff;">R</span>
+              </label>
+              <label class="face-label-btn">
+                <input type="checkbox" name="opt-face" value="L" checked />
+                <span class="face-box" style="--face-color:#FFA100; --face-text:#111;">L</span>
+              </label>
+            </div>
+            <div class="face-shortcuts">
+              <button type="button" class="btn-ghost" id="btn-all-faces">Tout</button>
+              <button type="button" class="btn-ghost" id="btn-no-faces">Aucun</button>
+            </div>
           </div>
-        </details> -->
-        <!-- Nombre de cartes : boutons radio -->
+        </details>
+
+        <!-- Nombre de cartes -->
         <fieldset class="opt-group">
           <legend class="opt-legend">CARTES PAR RUN</legend>
           <div class="radio-row">
@@ -51,14 +82,14 @@
               20
             </label>
             <label class="radio-label">
-              <input type="radio" name="opt-count" value="48" checked />
+              <input type="radio" name="opt-count" value="all" checked />
               <span class="radio-box"></span>
-              48 — tout
+              Tout
             </label>
           </div>
         </fieldset>
 
-        <!-- Checkboxes options -->
+        <!-- Options comportement -->
         <fieldset class="opt-group">
           <legend class="opt-legend">OPTIONS</legend>
           <div class="check-col">
@@ -68,7 +99,7 @@
               <span class="check-box"></span>
               <span class="check-text">
                 Remettre les erreurs dans le paquet
-                <span class="check-hint">La carte réapparaît aléatoirement plus tard — la progression recule</span>
+                <span class="check-hint">La carte réapparaît aléatoirement plus tard</span>
               </span>
             </label>
 
@@ -76,8 +107,8 @@
               <input type="checkbox" id="opt-rotate" checked />
               <span class="check-box"></span>
               <span class="check-text">
-                Rotation du cube
-                <span class="check-hint">Rotation aléatoire de l'image</span>
+                Rotation aléatoire du cube
+                <span class="check-hint">Orientation différente à chaque carte</span>
               </span>
             </label>
 
@@ -93,6 +124,11 @@
       <button id="btn-start" class="btn-primary">START</button>
 
     </div>
+  </div>
+
+  <!-- ===================== ÉCRAN COUNTDOWN ===================== -->
+  <div id="screen-countdown" class="screen">
+    <div id="countdown-number" class="countdown-number">3</div>
   </div>
 
   <!-- ===================== ÉCRAN QUIZ ===================== -->

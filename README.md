@@ -1,2 +1,2 @@
 # speedcubies
-Speedrunning the detection of blind letter
+Speedrunning the detection of blind letter (standard scheme)
