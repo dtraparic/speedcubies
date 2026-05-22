@@ -462,7 +462,11 @@ details[open] .opt-summary-arrow {
    QUIZ — ZONE PRINCIPALE
    dvh pour que le contenu reste au-dessus du clavier mobile
    ============================================================= */
-.quiz-main {
+.quiz-main{
+  height: 66vh;
+}   
+   
+main.quiz-main {
   position: fixed;
   top: 64px;
   bottom: 0;
@@ -470,7 +474,7 @@ details[open] .opt-summary-arrow {
   right: 0;
   /* dvh : le bas suit le clavier virtuel */
   height: calc(100dvh - 64px);
-  height: calc(100vh - 64px); /* fallback */
+  /*height: calc(66vh - 64px); /* fallback */
   display: flex;
   align-items: center;
   justify-content: center;
