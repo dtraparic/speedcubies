@@ -482,11 +482,19 @@ details[open] .opt-summary-arrow {
 }
 
 @media screen and (orientation: portrait) {
-    .quiz-main{
+    html, body, .screen#screen-quiz, .screen#screen-start, .screen#screen-countdown{
         height: 50vh;
-      }   
+    }   
+    .quiz-main{
+        height: calc(50vh - 64px);
     }
-
+    .quiz-main #card-area{
+        gap: 0rem;
+    }
+    #screen-start .start-inner{
+        gap: 0.15rem;
+    }
+}
 
 #card-area {
   display: flex;
