@@ -391,7 +391,7 @@ details[open] .opt-summary-arrow {
   text-shadow:
     0 0 40px rgba(0,229,255,0.6),
     0 0 100px rgba(0,229,255,0.2);
-  animation: countdown-pulse 0.8s ease-out;
+  animation: countdown-pulse 0.4s ease-out;
   user-select: none;
 }
 
@@ -462,11 +462,9 @@ details[open] .opt-summary-arrow {
    QUIZ — ZONE PRINCIPALE
    dvh pour que le contenu reste au-dessus du clavier mobile
    ============================================================= */
-.quiz-main{
-  height: 66vh;
-}   
+
    
-main.quiz-main {
+.quiz-main {
   position: fixed;
   top: 64px;
   bottom: 0;
@@ -479,6 +477,13 @@ main.quiz-main {
   align-items: center;
   justify-content: center;
 }
+
+@media screen and (orientation: portrait) {
+    .quiz-main{
+        height: 50vh;
+      }   
+    }
+
 
 #card-area {
   display: flex;

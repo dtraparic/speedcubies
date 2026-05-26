@@ -263,7 +263,7 @@ function runCountdown(onComplete) {
 
     i++;
     if (i < steps.length) {
-      setTimeout(showStep, 800);
+      setTimeout(showStep, 400);
     } else {
       // "GO" affiché 400ms puis on lance
       setTimeout(onComplete, 400);
