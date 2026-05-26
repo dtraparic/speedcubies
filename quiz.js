@@ -295,9 +295,11 @@ function showCard(idx) {
     container.querySelector("svg").style.transform = `rotate(${deg}deg)`;
   }
 
-  // Reset input + feedback
+  // Reset input + feedback + shadow cube
   const input = $("answer-input");
+  const svg = $("svg-container");
   input.value = "";
+  svg.classList.remove("correct_svg", "incorrect_svg");
   input.classList.remove("shake", "correct");
   $("feedback").textContent = "";
   $("feedback").className   = "feedback";
@@ -322,6 +324,8 @@ function showCard(idx) {
 function onInput() {
   const input  = $("answer-input");
   const typed  = input.value.trim().toUpperCase();
+  const svg = $("svg-container");
+
   if (!typed) return;
 
   const card     = deck[currentIdx];
@@ -342,7 +346,7 @@ function onInput() {
         attempts: (cardAttempts[card.position] || 0) + 1,
       });
     }
-
+    svg.classList.add("correct_svg");
     input.classList.remove("shake");
     input.classList.add("correct");
     $("feedback").textContent = "✓";
@@ -355,7 +359,7 @@ function onInput() {
       } else {
         showCard(currentIdx);
       }
-    }, 280);
+    }, 180);
 
   } else {
     // ---- MAUVAISE RÉPONSE ----
@@ -368,6 +372,7 @@ function onInput() {
     $("feedback").textContent = `✗ Ce n'est pas "${typed}"`;
     $("feedback").className   = "feedback";
 
+    svg.classList.add("incorrect_svg");
     input.classList.remove("shake");
     input.offsetHeight;
     input.classList.add("shake");
@@ -380,7 +385,7 @@ function onInput() {
       const insertAt = currentIdx + 1 + Math.floor(Math.random() * (deck.length - currentIdx));
       deck.splice(insertAt, 0, removed);
       // La carte suivante est maintenant à currentIdx (l'ancienne a été déplacée)
-      setTimeout(() => showCard(currentIdx), 320);
+      setTimeout(() => showCard(currentIdx), 180);
     }
   }
 }

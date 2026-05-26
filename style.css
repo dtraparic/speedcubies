@@ -9,6 +9,9 @@
   --accent:    #00e5ff;
   --ok:        #00e676;
   --warn:      #ff3c6e;
+  --svg-accent-alpha:   #00e5ff99;
+  --svg-ok-alpha:       #00e676;
+  --svg-warn-alpha:     #ff3c6e;
   --text:      #e0e0f0;
   --muted:     #555570;
   --font-mono: 'Share Tech Mono', monospace;
@@ -506,7 +509,14 @@ details[open] .opt-summary-arrow {
 }
 
 #svg-container svg {
-  filter: drop-shadow(0 0 12px rgba(0,229,255,0.2));
+  /* filter: drop-shadow(0 0 20px rgba(0,229,255,0.4)); */
+  filter: drop-shadow(0 0 22px var(--svg-accent-alpha));
+}
+#svg-container.incorrect_svg svg {
+  filter: drop-shadow(0 0 22px var(--svg-warn-alpha));
+}
+#svg-container.correct_svg svg {
+  filter: drop-shadow(0 0 22px var(--svg-ok-alpha));
 }
 /* La rotation est appliquée en JS via style.transform directement */
 #svg-container.rotating svg {
@@ -540,16 +550,19 @@ details[open] .opt-summary-arrow {
 }
 #answer-input:focus {
   border-color: var(--accent);
-  box-shadow: 0 0 12px rgba(0,229,255,0.3);
+  /* box-shadow: 0 0 15px rgba(0,229,255,0.3); */
+  box-shadow: 0 0 15px var(--svg-accent-alpha);
 }
 #answer-input.shake {
-  animation: shake 0.3s ease;
+  animation: shake 0.18s ease;
   border-color: var(--warn);
-  box-shadow: 0 0 12px rgba(255,60,110,0.4);
+  /* box-shadow: 0 0 15px rgba(255,60,110,0.6); */
+  box-shadow: 0 0 15px var(--svg-warn-alpha);
 }
 #answer-input.correct {
   border-color: var(--ok);
-  box-shadow: 0 0 12px rgba(0,230,118,0.4);
+  /* box-shadow: 0 0 15px rgba(0,230,118,0.6); */
+  box-shadow: 0 0 15px var(--svg-ok-alpha);
 }
 @keyframes shake {
   0%,100% { transform: translateX(0); }
