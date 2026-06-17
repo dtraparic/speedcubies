@@ -315,7 +315,7 @@ function showCard(idx) {
   area.offsetHeight;
   area.style.animation = "";
 
-  setTimeout(() => input.focus(), 30);
+  setTimeout(() => input.focus({ preventScroll: true }), 30);
 }
 
 /* =============================================================
